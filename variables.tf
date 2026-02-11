@@ -20,8 +20,8 @@ EOT
     name                = string
     vpn_gateway_id      = string
     ip_configuration_id = optional(string)
-    mode                = optional(string, "EgressSnat")
-    type                = optional(string, "Static")
+    mode                = optional(string) # Default: "EgressSnat"
+    type                = optional(string) # Default: "Static"
     external_mapping = optional(object({
       address_space = string
       port_range    = optional(string)
