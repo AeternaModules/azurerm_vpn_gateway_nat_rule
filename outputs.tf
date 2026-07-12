@@ -1,3 +1,7 @@
+output "vpn_gateway_nat_rules_id" {
+  description = "Map of id values across all vpn_gateway_nat_rules, keyed the same as var.vpn_gateway_nat_rules"
+  value       = { for k, v in azurerm_vpn_gateway_nat_rule.vpn_gateway_nat_rules : k => v.id }
+}
 output "vpn_gateway_nat_rules_external_mapping" {
   description = "Map of external_mapping values across all vpn_gateway_nat_rules, keyed the same as var.vpn_gateway_nat_rules"
   value       = { for k, v in azurerm_vpn_gateway_nat_rule.vpn_gateway_nat_rules : k => v.external_mapping }
